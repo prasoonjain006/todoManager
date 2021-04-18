@@ -58,7 +58,7 @@
 				<configuration>
 
 					<processTypes>
-						<web>java -jar target/todoManager-1.0.jar</web>
+						<web>java -war target/todoManager.war </web>
 					</processTypes>
 				</configuration>
 			</plugin>
