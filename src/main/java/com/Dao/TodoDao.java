@@ -20,7 +20,7 @@ public class TodoDao {
 	
 	@Transactional
 	public int save(Todo todo) {
-		int res = (int) this.hibernateTemplate.save(todo);
+		int res = (Integer) this.hibernateTemplate.save(todo);
 		return res;
 	}
 
