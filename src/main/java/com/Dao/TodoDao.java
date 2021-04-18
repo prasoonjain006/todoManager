@@ -14,7 +14,7 @@ import com.entities.Todo;
 @Component
 public class TodoDao {
 
-	@Autowired
+
 	HibernateTemplate hibernateTemplate;
 
 	
