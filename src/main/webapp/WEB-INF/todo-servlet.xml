@@ -13,8 +13,8 @@
         http://www.springframework.org/schema/context/spring-context.xsd 
         http://www.springframework.org/schema/tx
         http://www.springframework.org/schema/tx/spring-tx.xsd ">
-        
-	<tx:annotation-driven/>
+
+	<tx:annotation-driven />
 	<context:component-scan base-package="com"></context:component-scan>
 
 
@@ -29,15 +29,23 @@
 
 	</bean>
 
+	<bean class="java.net.URI" id="dbUrl">
+		<constructor-arg
+			value="#{systemEnvironment['DATABASE_URL']}" />
+	</bean>
+
 	<bean
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
 		name="ds">
 		<property name="driverClassName"
 			value="org.postgresql.Driver" />
+		<
 		<property name="url"
-			value="jdbc:postgresql://localhost:5432/todoapp" />
-		<property name="username" value="prasoon" />
-		<property name="password" value="1234" />
+			value="#{ 'jdbc:postgresql://' + @dbUrl.getHost() + ':' + @dbUrl.getPort() + @dbUrl.getPath() }" />
+		<property name="username"
+			value="#{ @dbUrl.getUserInfo().split(':')[0] }" />
+		<property name="password"
+			value="#{ @dbUrl.getUserInfo().split(':')[1] }" />
 	</bean>
 
 	<bean
@@ -64,10 +72,12 @@
 		name="hibernateTemplate">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	
-	<bean  class="org.springframework.orm.hibernate5.HibernateTransactionManager"   name="transactionManager"  >
-	<property name="sessionFactory" ref="sessionFactory"   />
+
+	<bean
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager"
+		name="transactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	
+
 
 </beans>
