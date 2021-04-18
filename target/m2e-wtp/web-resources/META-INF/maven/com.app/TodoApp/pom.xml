@@ -53,17 +53,6 @@
 		<finalName>TodoApp</finalName>
 		<plugins>
 			<plugin>
-				<groupId>com.heroku.sdk</groupId>
-				<artifactId>heroku-maven-plugin</artifactId>
-				<version>3.0.3</version>
-				<configuration>
-
-					<processTypes>
-						<web>java -war target/TodoApp.war </web>
-					</processTypes>
-				</configuration>
-			</plugin>
-			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
 				<executions>
