@@ -58,7 +58,7 @@
 				<configuration>
 
 					<processTypes>
-						<web>java -war target/todoManager.war </web>
+						<web>java -war target/TodoApp.war </web>
 					</processTypes>
 				</configuration>
 			</plugin>

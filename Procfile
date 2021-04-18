@@ -1,1 +1,1 @@
-web :java -war target/todoManager.war 
+web :java -war target/TodoApp.war 
