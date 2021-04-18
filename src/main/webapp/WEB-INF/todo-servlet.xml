@@ -39,7 +39,6 @@
 		name="ds">
 		<property name="driverClassName"
 			value="org.postgresql.Driver" />
-		<
 		<property name="url"
 			value="#{ 'jdbc:postgresql://' + @dbUrl.getHost() + ':' + @dbUrl.getPort() + @dbUrl.getPath() }" />
 		<property name="username"
