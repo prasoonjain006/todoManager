@@ -32,6 +32,7 @@ public class HomeController {
 	@RequestMapping("/add")
 	public String add(Model m) {
 
+
 		Todo todo = new Todo();
 		m.addAttribute("todo", todo);
 
