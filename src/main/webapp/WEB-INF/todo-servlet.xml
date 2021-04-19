@@ -36,7 +36,7 @@
 
 	<bean name="ds" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="url"
-			value="#{ 'jdbc:postgresql://' + @dbUrl.getHost() + ':' + @dbUrl.getPort() + @dbUrl.getPath() + '?sslmode=require' } " />
+			value="#{ 'jdbc:postgresql://' + @dbUrl.getHost() + ':' + @dbUrl.getPort() + @dbUrl.getPath() } " />
 		<property name="username"
 			value="#{ @dbUrl.getUserInfo().split(':')[0] }" />
 		<property name="password"
@@ -49,7 +49,7 @@
 		<property name="dataSource" ref="ds" />
 		<property name="hibernateProperties">
 			<props>
-				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL92Dialect</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL10Dialect</prop>
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
 				<prop key="hibernate.show_sql">True</prop>
 			</props>
