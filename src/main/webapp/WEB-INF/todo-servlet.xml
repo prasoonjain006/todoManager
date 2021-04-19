@@ -49,7 +49,7 @@
 		<property name="dataSource" ref="ds" />
 		<property name="hibernateProperties">
 			<props>
-				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL10Dialect</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL94Dialect</prop>
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
 				<prop key="hibernate.show_sql">True</prop>
 			</props>
