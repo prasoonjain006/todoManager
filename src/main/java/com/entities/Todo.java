@@ -11,6 +11,7 @@ import javax.persistence.Table;
 
 
 @Entity
+@Table(name="todo")
 public class Todo {
 	
 	@Id
